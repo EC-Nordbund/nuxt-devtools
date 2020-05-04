@@ -3,6 +3,11 @@ import * as fs from "fs";
 import * as dirs from "global-dirs";
 
 const devToolModule = function () {
+  if (process.env.NODE_ENV === "production") {
+    // In Production this is a no-op module
+    return;
+  }
+
   const files = [dirs.npm.binaries, dirs.yarn.binaries]
     .map((dir) => path.join(dir, "vue-devtools"))
     .map((bin) => fs.existsSync(bin));
@@ -10,8 +15,6 @@ const devToolModule = function () {
   if (!files.some((v) => v)) {
     throw "Global devtools not installed";
   }
-
-  console.log(files);
 
   this.addPlugin({
     src: path.resolve(__dirname, "./plugin.js"),
