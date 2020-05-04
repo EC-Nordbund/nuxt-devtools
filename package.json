@@ -1,0 +1,11 @@
+{
+  "name": "nuxt-devtools",
+  "version": "1.0.0",
+  "main": "module.js",
+  "repository": "https://github.com/EC-Nordbund/nuxt-devtools.git",
+  "author": "Sebastian Krüger <2pi_r2@gmx.de>",
+  "license": "MIT",
+  "dependencies": {
+    "global-dirs": "^2.0.1"
+  }
+}
