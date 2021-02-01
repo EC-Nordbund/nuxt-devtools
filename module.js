@@ -8,6 +8,7 @@ const devToolModule = function () {
     return;
   }
 
+  // vue-devtools installed?
   const files = [dirs.npm.binaries, dirs.yarn.binaries]
     .map((dir) => path.join(dir, "vue-devtools"))
     .map((bin) => fs.existsSync(bin));
@@ -16,6 +17,7 @@ const devToolModule = function () {
     throw "Global devtools not installed";
   }
 
+  // Inject Plugin (only client)
   this.addPlugin({
     src: path.resolve(__dirname, "./plugin.js"),
     mode: "client",
