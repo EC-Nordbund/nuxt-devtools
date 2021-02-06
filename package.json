@@ -12,6 +12,6 @@
     "node": ">=10"
   },
   "dependencies": {
-    "global-dirs": "^3.0.0"
+    "global-dirs": "3.0.0"
   }
 }
